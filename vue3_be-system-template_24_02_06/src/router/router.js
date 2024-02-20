@@ -1,18 +1,17 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const Home = () => import("../components/HomePage/Home.vue");
+const HomePage = () => import("../view/HomePage/index.vue");
+const EchartPage = () => import("../view/EchartPage/index.vue");
+const BackEndPage = () => import("../view/BackEndPage/index.vue");
 
 const routes = [
-  { path: "/", component: Home },
-  { path: "/about", component: About },
+  { path: "/", component: HomePage },
+  { path: "/bigScreen", component: EchartPage },
 ];
 
-const router = VueRouter.createRouter({
-  history: VueRouter.createWebHashHistory(),
-  routes, 
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
 });
 
-const app = Vue.createApp({});
-app.use(router);
-
-app.mount("#app");
+export default router;
