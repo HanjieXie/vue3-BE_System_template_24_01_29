@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "ant-design-vue": "4.x",
-    "vue": "^3.3.11"
+    "echarts": "^5.5.0",
+    "moment": "^2.30.1",
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",

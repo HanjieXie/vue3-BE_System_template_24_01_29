@@ -1,10 +1,10 @@
 <template>
   <!-- flex_all_center 全局配置容器子元素水平垂直居中 -->
   <div class="home_Style flex_all_center">
-    <div class="home_box flex_all_center" @mouseenter="handleMouseover" @onmouseleave="handleMouseout">
+    <div class="home_box flex_all_center" @mouseenter="handleMouseover" @mouseleave="handleMouseout">
       <div class="home_bar">
         <div v-if="barSwitch">
-          <h2>首页</h2>
+          <h2 v-responsive="'font-size'" style="font-size: 16px">首页</h2>
         </div>
         <div class="home_bar" v-else>
           <h2 @click="toEchartsPage">
@@ -28,22 +28,23 @@ import { ArrowRightOutlined } from '@ant-design/icons-vue';
 
 
 const router = useRouter();
-const route = useRoute();
 
 // 导航栏切换
 const barSwitch = ref(true);
 // 鼠标悬浮
 const handleMouseover = () => {
+  console.log('1')
   barSwitch.value = false;
 }
 // 鼠标移除
 const handleMouseout = () => {
+  console.log('2')
   barSwitch.value = true;
 }
 
 // 前往首页
 const toEchartsPage = () => {
-  console.log('working')
+  // console.log('working')
   router.push('/bigScreen');
 }
 // 前往首页
