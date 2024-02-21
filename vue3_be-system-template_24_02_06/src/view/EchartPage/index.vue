@@ -11,7 +11,6 @@
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
 import HeaderSystemName from "../../components/BigScreen/HeaderSystemName/index.vue";
 import SectionOptions from '../../components/BigScreen/SectionOptions/index.vue';
 </script>

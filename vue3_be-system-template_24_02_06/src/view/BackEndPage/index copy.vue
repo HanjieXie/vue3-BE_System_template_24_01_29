@@ -1,11 +1,18 @@
 <template>
   <a-layout id="components-layout-demo-custom-trigger" style="min-height: 100vh;">
-    <a-layout-sider :trigger="null" collapsible v-model:value="collapsed">
-      <!-- 动态生成菜单项 -->
+    <a-layout-sider :trigger="null" collapsible v-model.value:collapsed="collapsed">
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['1']">
-        <a-menu-item v-for="item in menuItems" :key="item.key">
+        <a-menu-item key="1">
           <ArrowRightOutlined />
-          <span>{{ item.title }}</span>
+          <span>nav 1</span>
+        </a-menu-item>
+        <a-menu-item key="2">
+          <ArrowRightOutlined />
+          <span>nav 2</span>
+        </a-menu-item>
+        <a-menu-item key="3">
+          <ArrowRightOutlined />
+          <span>nav 3</span>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
@@ -33,16 +40,9 @@
 import { ref } from 'vue';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons-vue';
 
+// 使用ref来控制菜单的展开和收起状态
 const collapsed = ref(false);
-
-// 定义动态菜单项数据
-const menuItems = ref([
-  { key: '1', title: 'nav 1', path:"/tableComponent" },
-  { key: '2', title: 'nav 2' },
-  { key: '3', title: 'nav 3' },
-]);
 </script>
-
 
 <style>
 #components-layout-demo-custom-trigger .logo {

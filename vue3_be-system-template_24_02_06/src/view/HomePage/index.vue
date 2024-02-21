@@ -4,14 +4,14 @@
     <div class="home_box flex_all_center" @mouseenter="handleMouseover" @mouseleave="handleMouseout">
       <div class="home_bar">
         <div v-if="barSwitch">
-          <h2 v-responsive="'font-size'" style="font-size: 16px">首页</h2>
+          <h2>首页</h2>
         </div>
         <div class="home_bar" v-else>
-          <h2 @click="toEchartsPage">
+          <h2 @click="toEchartsPage" style="cursor: pointer;">
             <ArrowRightOutlined />
             大屏应用
           </h2>
-          <h2 @click="toBackEndPage">
+          <h2 @click="toBackEndPage" style="cursor: pointer;">
             <ArrowRightOutlined />
             后台管理系统
           </h2>
@@ -49,6 +49,7 @@ const toEchartsPage = () => {
 }
 // 前往首页
 const toBackEndPage = () => {
+  router.push('/backendSystem');
 
 }
 
